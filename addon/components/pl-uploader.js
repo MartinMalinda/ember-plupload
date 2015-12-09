@@ -98,7 +98,12 @@ export default Ember.Component.extend({
         container: get(this, 'elementId'),
         flash_swf_url: this.BASE_URL + 'Moxie.swf',
         silverlight_xap_url: this.BASE_URL + 'Moxie.xap',
-        unique_names: get(this, 'unique-names')
+        unique_names: get(this, 'unique-names'),
+        resize: {
+          width: parseInt(this.get('resizeWidth')),
+          height: parseInt(this.get('resizeHeight')),
+          crop: true
+        }
       };
 
       var filters = get(this, 'fileFilters') || {};
